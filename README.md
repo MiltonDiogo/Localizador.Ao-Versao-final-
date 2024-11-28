@@ -43,12 +43,12 @@ Clique no comando para copiá-lo automaticamente:
 <pre>
 <code onclick="navigator.clipboard.writeText(`pkg update && pkg upgrade -y
 pkg install python git curl openssh -y
-git clone https://github.com/MiltonDiogo/ferramentas.git
-cd ferramentas
+git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
+cd Localizador.Ao-Versao-final-
 python localizador.ao.py`)">pkg update && pkg upgrade -y
 pkg install python git curl openssh -y
-git clone https://github.com/MiltonDiogo/ferramentas.git
-cd ferramentas
+git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
+cd Localizador.Ao-Versao-final-
 python localizador.ao.py</code>
 </pre>
 ---
@@ -62,12 +62,12 @@ Clique no comando para copiá-lo automaticamente:
 <pre>
 <code onclick="navigator.clipboard.writeText(`sudo apt update && sudo apt upgrade -y
 sudo apt install python3 git curl openssh-client -y
-git clone https://github.com/MiltonDiogo/ferramentas.git
-cd ferramentas
+git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
+cd Localizador.Ao-Versao-final-
 python3 localizador.ao.py`)">sudo apt update && sudo apt upgrade -y
 sudo apt install python3 git curl openssh-client -y
-git clone https://github.com/MiltonDiogo/ferramentas.git
-cd ferramentas
+git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
+cd Localizador.Ao-Versao-final-
 python3 localizador.ao.py</code>
 </pre>
 ---
@@ -87,11 +87,11 @@ https://www.python.org/downloads/
 
 
 <pre>
-<code onclick="navigator.clipboard.writeText(`git clone https://github.com/MiltonDiogo/ferramentas.git
-cd ferramentas
+<code onclick="navigator.clipboard.writeText(`git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
+cd Localizador.Ao-Versao-final-
 pip install flask requests
-python localizador.ao.py`)">git clone https://github.com/MiltonDiogo/ferramentas.git
-cd ferramentas
+python localizador.ao.py`)">git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
+cd Localizador.Ao-Versao-final-
 pip install flask requests
 python localizador.ao.py</code>
 </pre>
