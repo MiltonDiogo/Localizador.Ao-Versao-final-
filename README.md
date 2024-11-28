@@ -46,7 +46,9 @@ pkg install python git curl openssh -y
 git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
 cd Localizador.Ao-Versao-final-
 python localizador.ao.py`)">pkg update && pkg upgrade -y
-pkg install python git curl openssh -y
+pkg install python git curl 
+pip install flask rich requests
+openssh -y
 git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
 cd Localizador.Ao-Versao-final-
 python localizador.ao.py</code>
@@ -62,10 +64,12 @@ Clique no comando para copiá-lo automaticamente:
 <pre>
 <code onclick="navigator.clipboard.writeText(`sudo apt update && sudo apt upgrade -y
 sudo apt install python3 git curl openssh-client -y
+pip install flask rich requests
 git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
 cd Localizador.Ao-Versao-final-
 python3 localizador.ao.py`)">sudo apt update && sudo apt upgrade -y
 sudo apt install python3 git curl openssh-client -y
+  pip install flask rich requests
 git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
 cd Localizador.Ao-Versao-final-
 python3 localizador.ao.py</code>
@@ -90,6 +94,7 @@ https://www.python.org/downloads/
 <code onclick="navigator.clipboard.writeText(`git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
 cd Localizador.Ao-Versao-final-
 pip install flask requests
+pip install flask rich requests
 python localizador.ao.py`)">git clone https://github.com/MiltonDiogo/Localizador.Ao-Versao-final-
 cd Localizador.Ao-Versao-final-
 pip install flask requests
