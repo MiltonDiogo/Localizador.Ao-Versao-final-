@@ -62,12 +62,12 @@ def start_serveo():
         while True:
             line = process.stdout.readline().strip()
             if "http://" in line or "https://" in line:
-                link_gerado = line.strip()  # Remove espaços extras
+                link_gerado = line.strip()
                 break
         if link_gerado:
             console.print("\n[bold green]Link gerado com sucesso![/bold green]")
             console.print(f"[bold cyan]Link: {link_gerado}[/bold cyan]")
-            console.print("[bold yellow]Copie o link acima e pressione CTRL+C para encerrar o servidor.[/bold yellow]")
+            console.print("[bold yellow]Pressione CTRL+C para encerrar o servidor.[/bold yellow]")
             process.wait()
         else:
             console.print("[bold red]Erro ao gerar o link do Serveo.[/bold red]")
@@ -75,6 +75,39 @@ def start_serveo():
         console.print("\n[bold red]Servidor encerrado pelo usuário![/bold red]")
     except Exception as e:
         console.print(f"[bold red]Erro ao criar túnel: {e}[/bold red]")
+
+def localizar_ip(ip):
+    url = f"https://ipinfo.io/{ip}?token={API_TOKEN}"
+    try:
+        response = requests.get(url)
+        data = response.json()
+        if "bogon" in data:
+            return "[bold yellow]IP reservado (bogon).[/bold yellow]"
+        ip_info = {
+            "IP": data.get("ip", "Desconhecido"),
+            "Cidade": data.get("city", "Desconhecida"),
+            "Região": data.get("region", "Desconhecida"),
+            "País": data.get("country", "Desconhecido"),
+            "Org": data.get("org", "Desconhecida"),
+            "Lat/Lon": data.get("loc", "0,0")
+        }
+        return "\n".join(f"[cyan]{key}:[/cyan] {value}" for key, value in ip_info.items()) + f"\n[green]Mapa: https://www.google.com/maps?q={ip_info['Lat/Lon']}[/green]"
+    except Exception as e:
+        return f"[bold red]Erro ao localizar IP: {e}[/bold red]"
+
+def instalar_dependencias():
+    os.system("pkg update && pkg upgrade -y || sudo apt update && sudo apt upgrade -y")
+    os.system("pkg install python git curl openssh -y || sudo apt install python3 git curl openssh-client -y")
+    os.system("pip install flask rich requests")
+    console.print("[bold green]Dependências instaladas com sucesso![/bold green]")
+
+def mostrar_manual():
+    manual = """
+    [bold blue]Manual de Utilização:[/bold blue]
+    - Escolha opções no menu para redirecionar links, capturar IPs e exibir logs.
+    - Utilize 'Instalar Dependências' na primeira execução.
+    """
+    console.print(manual)
 
 def menu():
     while True:
@@ -101,8 +134,10 @@ def menu():
             input("[bold green]Pressione Enter para voltar ao menu.[/bold green]")
         elif escolha == "4":
             instalar_dependencias()
+            input("[bold green]Pressione Enter para voltar ao menu.[/bold green]")
         elif escolha == "5":
             mostrar_manual()
+            input("[bold green]Pressione Enter para voltar ao menu.[/bold green]")
         elif escolha == "6":
             console.print("[bold green]Saindo...[/bold green]")
             break
